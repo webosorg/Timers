@@ -1,4 +1,4 @@
-export default class ReuseLazyPromise {
+export default class ReusableLazyPromise {
   constructor(executor) {
     this.__executor__ = executor;
   }

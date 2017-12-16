@@ -1,7 +1,7 @@
 import setImmediate from './setImmediate';
 
-import ReuseLazyPromise from './utils/reuseLazyPromise';
+import ReusableLazyPromise from './utils/reusableLazyPromise';
 
-const nextTick = _ => new ReuseLazyPromise(res => setImmediate(res));
+const nextTick = _ => new ReusableLazyPromise(res => setImmediate(res));
 
 export default nextTick;
