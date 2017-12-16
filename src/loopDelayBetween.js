@@ -22,6 +22,7 @@ const loopDelayBetween = (fn, time = 0, iterations = Infinity) => {
 
   const rPromiseThen = (...args) => rPromise.then(...args) && rPromise;
 
+  rPromise.done = rPromiseThen;
   rPromise.run = rPromiseThen;
 
   return rPromise;
