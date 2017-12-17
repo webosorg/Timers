@@ -1,6 +1,6 @@
 {
   "name": "@webos/timers",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Abstraction layer on setTimeout and setInterval, implementation of setImmediate.",
   "main": "./dist/timers.js",
   "scripts": {
@@ -28,9 +28,10 @@
     "url": "https://github.com/webosorg/Timers/issues"
   },
   "homepage": "https://github.com/webosorg/Timers#readme",
-  "dependencies": {
+  "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-es2015": "^6.24.1"
-  }
+  },
+  "dependencies": {}
 }
