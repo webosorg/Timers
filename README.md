@@ -91,7 +91,7 @@ And, let’s imagine that the execution time of fn is ~100 milliseconds. In this
 ![alt every](https://raw.githubusercontent.com/webosorg/Timers/master/images_for_readme/every.png)
 
 As we see, all function will be called after 500 milliseconds, and then each next function will be called after 400 milliseconds from the end of the previous function.
-If you want to call every next function after inputted time plus execution time of function you can use ```loopDelayBetween``` instead of ```even```.
+If you want to call every next function after inputted time plus execution time of function you can use ```loopDelayBetween``` instead of ```every```.
 
 ### loopDelayBetween
 
@@ -152,7 +152,7 @@ To implement a 0 ms timeout in a modern browser, you can use [window.postMessage
 Browsers including Internet Explorer, Chrome, Safari, and Firefox store the delay as a 32-bit signed Integer internally. This causes an Integer.
 
 There are some implementations of this, like [setZeroTimeout](https://dbaron.org/log/20100309-faster-timeouts) or [setImmediate](https://developer.mozilla.org/ru/docs/Web/API/Window/setImmediate).
-The best polyfill of ```setImmediate``` is this [polyfill](https://github.com/YuzuJS/setImmediate). They use ```postMessage```, ```MessageChannel```, even "<script> onreadystatechange" for reaching maximum support in old browsers.
+The best polyfill of ```setImmediate``` is this [polyfill](https://github.com/YuzuJS/setImmediate). They use ```postMessage```, ```MessageChannel```, even "script onreadystatechange" for reaching maximum support in old browsers.
 
 In this library, the implementation of ```setImmediate``` uses ```Promise.resolve()```.
 It’s the fastest way, but writing ```setImmediate``` polyfill by using ```Promise.resolve()``` has one problem.
