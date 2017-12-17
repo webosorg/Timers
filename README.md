@@ -1,6 +1,6 @@
 # @webos/timers
 
-// histogram
+[![(a histogram of downloads)](https://nodei.co/npm-dl/@webos/timers.png)](https://www.npmjs.com/package/@webos/timers)
 
 ## Synopsys
 
