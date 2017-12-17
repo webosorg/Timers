@@ -1,5 +1,5 @@
 const timeouts = {};
-let timerID = 1; // In the specification timer ID should be greater then 0
+let timerID = 1; // In specification timer ID should be greater then 0
 
 const isPromiseNative = typeof Promise !== 'undefined' &&
   Promise.toString().includes('[native code]');

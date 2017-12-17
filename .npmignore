@@ -1,3 +1,5 @@
 node_modules
 src
 npm-debug.log
+images_for_readme
+.DS_Store
