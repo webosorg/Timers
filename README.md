@@ -41,13 +41,13 @@ sleep_five_seconds.then(...) // it can be reused many times
 
 1) 
 ```js
-nextTick().then(_ => console.log(‘Log ::: immediately’));
+nextTick().then(_ => console.log('Log ::: immediately'));
 ```
 
 2)
 ```js
 const next_tick = nextTick();
-next_tick.then(_ => console.log(‘Log ::: immediately’));
+next_tick.then(_ => console.log('Log ::: immediately'));
 //
 //
 next_tick.then(...); // it can be reused many times
@@ -63,12 +63,12 @@ next_tick.then(...); // it can be reused many times
 
 1) 
 ```js
-every(_ => console.log(‘Log ::: every ~500 milliseconds’), 500, 20).then(_ => console.log(‘Log ::: I have finished’));
+every(_ => console.log('Log ::: every ~500 milliseconds'), 500, 20).then(_ => console.log('Log ::: I have finished'));
 ```
 
 2)
 ```js
-const log_every_ten_milliseconds = every(_ => console.log(‘Log ::: every ~10 milliseconds’), 500, 4);
+const log_every_ten_milliseconds = every(_ => console.log('Log ::: every ~10 milliseconds'), 500, 4);
 log_every_ten_milliseconds.run();
 // Log ::: every ~10 milliseconds
 // Log ::: every ~10 milliseconds
@@ -80,13 +80,13 @@ log_every_ten_milliseconds.run();
 
 ```every``` uses ```setInterval``` wrapped with reusable lazy promise.
 So, it means that every next call of fn will be after inputted time. ( When execution time of fn is not bigger than inputted time ).
-For example, let’s consider that we have an application of ```every``` like this.
+For example, let's consider that we have an application of ```every``` like this.
 
 ```js
 every(fn, 500, 4).then(...)
 ```
 
-And, let’s imagine that the execution time of fn is ~100 milliseconds. In this case it will work like this.
+And, let's imagine that the execution time of fn is ~100 milliseconds. In this case it will work like this.
 
 ![alt every](https://raw.githubusercontent.com/webosorg/Timers/master/images_for_readme/every.png)
 
@@ -101,12 +101,12 @@ If you want to call every next function after inputted time plus execution time 
 
 1) 
 ```js
-loopDelayBetween(_ => console.log(‘Log ::: every ~500 milliseconds’), 500, 20).then(_ => console.log(‘Log ::: I have finished’));
+loopDelayBetween(_ => console.log('Log ::: every ~500 milliseconds'), 500, 20).then(_ => console.log('Log ::: I have finished'));
 ```
 
 2)
 ```js
-const log_every_ten_milliseconds = every(_ => console.log(‘Log ::: every ~10 milliseconds’), 500, 4);
+const log_every_ten_milliseconds = every(_ => console.log('Log ::: every ~10 milliseconds'), 500, 4);
 log_every_ten_milliseconds.run();
 // Log ::: every ~10 milliseconds
 // Log ::: every ~10 milliseconds
@@ -124,7 +124,7 @@ For example, suppose that we have an application of ```loopDelayBetween``` like 
 loopDelayBetween(fn, 500, 4).then(...)
 ```
 
-And, let’s imagine that execution time of fn is ~100 milliseconds’. In this case it will work like this.
+And, let's imagine that execution time of fn is ~100 milliseconds. In this case it will work like this.
 
 ![alt loopDelayBetween](https://raw.githubusercontent.com/webosorg/Timers/master/images_for_readme/loopDelayBetween.png)
 
@@ -133,7 +133,7 @@ And, let’s imagine that execution time of fn is ~100 milliseconds’. In this 
 [MDN](https://developer.mozilla.org/ru/docs/Web/API/Window/setImmediate) - This method is used to break up long running operations and run a callback function immediately after
 the browser has completed other operations such as events and display updates.
 
-The ```setImmediate``` problem is that it’s not part of any specification and is not supported by many browsers.
+The ```setImmediate``` problem is that it's not part of any specification and is not supported by many browsers.
 
 [MDN](https://developer.mozilla.org/ru/docs/Web/API/Window/setImmediate)
 
@@ -155,8 +155,8 @@ There are some implementations of this, like [setZeroTimeout](https://dbaron.org
 The best polyfill of ```setImmediate``` is this [polyfill](https://github.com/YuzuJS/setImmediate). They use ```postMessage```, ```MessageChannel```, even "script onreadystatechange" for reaching maximum support in old browsers.
 
 In this library, the implementation of ```setImmediate``` uses ```Promise.resolve()```.
-It’s the fastest way, but writing ```setImmediate``` polyfill by using ```Promise.resolve()``` has one problem.
-It’s the following: ```Promise``` polyfill uses setImmediate inside, if it exists.
+It's the fastest way, but writing ```setImmediate``` polyfill by using ```Promise.resolve()``` has one problem.
+It's the following: ```Promise``` polyfill uses setImmediate inside, if it exists.
 
 [promise-polyfill](https://github.com/taylorhakes/promise-polyfill)
 
