@@ -1,6 +1,6 @@
 {
   "name": "@webos/timers",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Abstraction layer on setTimeout and setInterval, implementation of setImmediate.",
   "main": "./dist/timers.js",
   "scripts": {
