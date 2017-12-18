@@ -88,7 +88,7 @@ every(fn, 500, 4).then(...)
 
 And, let's imagine that the execution time of fn is ~100 milliseconds. In this case it will work like this.
 
-![alt every](https://raw.githubusercontent.com/webosorg/Timers/master/images_for_readme/every.png)
+![alt every](https://raw.githubusercontent.com/webosorg/Timers/master/readme-images/every.png)
 
 As we see, each next function will be called after 400 milliseconds from the end of the previous function.
 If you want to call every next function after inputted time plus execution time of function you can use ```loopDelayBetween``` instead of ```every```.
@@ -126,7 +126,7 @@ loopDelayBetween(fn, 500, 4).then(...)
 
 And, let's imagine that execution time of fn is ~100 milliseconds. In this case it will work like this.
 
-![alt loopDelayBetween](https://raw.githubusercontent.com/webosorg/Timers/master/images_for_readme/loopDelayBetween.png)
+![alt loopDelayBetween](https://raw.githubusercontent.com/webosorg/Timers/master/readme-images/loopDelayBetween.png)
 
 ### setImmediate
 
@@ -137,7 +137,7 @@ The ```setImmediate``` problem is that it's not part of any specification and is
 
 [MDN](https://developer.mozilla.org/ru/docs/Web/API/Window/setImmediate)
 
-![alt setImmediate_](https://raw.githubusercontent.com/webosorg/Timers/master/images_for_readme/setImmediate_.png)
+![alt setImmediate_](https://raw.githubusercontent.com/webosorg/Timers/master/readme-images/setImmediate_.png)
 
 ```setImmediate``` is similar to ```setTimeout(..., 0)```. But ```setTimeout``` have minimum timeout (~4ms).
 It means that when we call ```setTimeout(..., 0)``` it will work after ~4ms.
@@ -160,7 +160,7 @@ It's the following: ```Promise``` polyfill uses setImmediate inside, if it exist
 
 [promise-polyfill](https://github.com/taylorhakes/promise-polyfill)
 
-![alt promise-polyfill](https://raw.githubusercontent.com/webosorg/Timers/master/images_for_readme/promise_polifill.png)
+![alt promise-polyfill](https://raw.githubusercontent.com/webosorg/Timers/master/readme-images/promise_polifill.png)
 
 So, if we write ```setImmediate``` polyfill without using checkings, cyclic calls will occur.
 For avoiding this the implementation of ```setImmediate``` in this library checks if the browser supports native ```Promise```,
