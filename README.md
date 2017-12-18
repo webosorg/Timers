@@ -90,7 +90,7 @@ And, let’s imagine that the execution time of fn is ~100 milliseconds. In this
 
 ![alt every](https://raw.githubusercontent.com/webosorg/Timers/master/images_for_readme/every.png)
 
-As we see, all function will be called after 500 milliseconds, and then each next function will be called after 400 milliseconds from the end of the previous function.
+As we see, each next function will be called after 400 milliseconds from the end of the previous function.
 If you want to call every next function after inputted time plus execution time of function you can use ```loopDelayBetween``` instead of ```every```.
 
 ### loopDelayBetween
