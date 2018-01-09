@@ -4,7 +4,7 @@ let timerID = 1; // In specification timer ID should be greater then 0
 const isPromiseNative = typeof Promise !== 'undefined' &&
   Promise.toString().includes('[native code]');
 
-const setTimeoutWithZero = (cb, ...args) => setTimeoutWithZero(cb, 0, ...args);
+const setTimeoutWithZero = (cb, ...args) => setTimeout(cb, 0, ...args);
 
 const setImmediate = isPromiseNative ? (cb, ...args) => {
 
